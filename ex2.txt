@@ -1,0 +1,25 @@
+    1  ls
+    2  clear
+    3  sudo apt update
+    4  sudo apt upgrade
+    5  reboot
+    6  cat /var/log/apt/history.log 
+    7  reboot
+    8  systemctl reboot -i
+    9  reboot
+   10  su
+   11  sudo -i
+   12  shutdown 0
+   13  reboot
+   14  mkdir week1 
+   15  ls
+   16  cd week1
+   17  ls
+   18  ls /usr/bin | sort -r | grep -l gcc > ex1.txt
+   19  ls /usr/bin | sort -r | grep -l 'gcc' > ex1.txt
+   20  nano ex1.txt
+   21  ls /usr/bin | sort -r | grep -w 'gcc' > ex1.txt
+   22  ls /usr/bin
+   23  ls /usr/bin | sort -r | grep 'gcc' > ex1.txt
+   24  history ex2.txt 
+   25  history > ex2.txt 
