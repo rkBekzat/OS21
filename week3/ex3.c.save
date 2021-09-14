@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+struct node {
+	int val;
+	struct node *nxt;
+};
+
+void print_list(struct node *head){
+	struct node* cur = head;
+
+	while(cur != NULL){
+		printf("%d\n", cur->val);
+		cur = cur->nxt;
+	}
+}
+
+void insert_node(struct node *head, int newvalue, int prevnode){
+	struct node* cur = head;
+	struct node *newnode;
+	newnode = (struct node*)malloc(sizeof(struct node));
+	newnode->val = newvalue;
+
+	while(cur->val != prevnode){
+		cur=cur->nxt;
+	}
+	newnode->nxt = cur->nxt;
+	cur->nxt = newnode;
+}
+
+void delete_node(struct node *head, int delnode){
+	struct node* cur = head;
+
+	while(cur->val != delnode){
+		cur = cur->nxt;
+	}
+	cur->nxt = cur->nxt->nxt;
+}
+
+
+struct node *start = ();
+
+int main(){
+	while(){
+		printf("1 Print the linked list\n");
+		printf("2 Insert node\n");
+		printf("3 Delete node\n");
+
+		int x;
+		scanf("%d", &x);
+
+		if(x == 1){
+			
+		}
+		else if(x == 2){
+
+		}
+		else{
+
+		}
+	}
+}
