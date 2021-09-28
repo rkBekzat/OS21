@@ -36,7 +36,9 @@ int compare(time *a, time * b){
 int main(){
 	time *table = parseCsv("new_input.csv");
 	qsort(table, size, sizeof(time), compare);
-	printf("#p      AT      BT      CT      TAT      WT\n");
+	FILE *fp = fopen("ex1.txt", "w");
+
+	fprintf(fp, "#p      AT      BT      CT      TAT      WT\n");
 	int temp = 0;
 	double  avwt = 0, avtat = 0;
 	for(int i = 0; i < size; i++){
@@ -48,11 +50,12 @@ int main(){
 		int wt = tat - table[i].brust_t;
 		avwt += wt;
 		avtat += tat;
-		printf("P%-7d%-8d%-8d%-8d%-8d%-8d\n", i+1, table[i].arrival_t, table[i].brust_t, ct, tat, wt);
+		fprintf(fp, "P%-7d%-8d%-8d%-8d%-8d%-8d\n", i+1, table[i].arrival_t, table[i].brust_t, ct, tat, wt);
 	}
-	printf("Average Turnaround Time  = %f\n", (double)avtat / size);
-	printf("Average Waiting Time = %f\n", (double)avwt / size);
+	fprintf(fp, "Average Turnaround Time  = %f\n", (double)avtat / size);
+	fprintf(fp, "Average Waiting Time = %f\n", (double)avwt / size);
 	free(table);
+	fclose(fp);
 }
 
 

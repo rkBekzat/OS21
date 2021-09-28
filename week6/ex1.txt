@@ -1,0 +1,8 @@
+#p      AT      BT      CT      TAT      WT
+P1      4       1       5       1       0       
+P2      6       4       10      4       0       
+P3      10      2       12      2       0       
+P4      10      3       15      5       2       
+P5      13      4       19      6       2       
+Average Turnaround Time  = 3.600000
+Average Waiting Time = 0.800000

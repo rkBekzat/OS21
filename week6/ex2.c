@@ -36,7 +36,8 @@ int compare(time *a, time * b){
 int main(){
 	time *table = parseCsv("new_input.csv");
 	qsort(table, size, sizeof(time), compare);
-	printf("#p      AT      BT      CT      TAT      WT\n");
+	FILE *fp = fopen("ex2.txt", "w");
+	fprintf(fp, "#p      AT      BT      CT      TAT      WT\n");
 	int temp = table[0].arrival_t + table[0].brust_t;
 	double avwt = 0, avtat = 0;
 	int ct = temp;
@@ -44,7 +45,7 @@ int main(){
 	int wt = tat - table[0].brust_t;
 	avwt += wt;
 	avtat += tat;
-	printf("P%-7d%-8d%-8d%-8d%-8d%-8d\n", 1, table[0].arrival_t, table[0].brust_t, ct, tat, wt);
+	fprintf(fp, "P%-7d%-8d%-8d%-8d%-8d%-8d\n", 1, table[0].arrival_t, table[0].brust_t, ct, tat, wt);
 	for(int i = 1; i < size; i++){
 		int j = i, pos = i, brust = table[i].brust_t;
 		while(j < size && table[j].arrival_t <= temp){
@@ -67,9 +68,10 @@ int main(){
 		wt = tat - table[i].brust_t;
 		avwt += wt;
 		avtat += tat;
-		printf("P%-7d%-8d%-8d%-8d%-8d%-8d\n", i+1, table[i].arrival_t, table[i].brust_t, ct, tat, wt);
+		fprintf(fp, "P%-7d%-8d%-8d%-8d%-8d%-8d\n", i+1, table[i].arrival_t, table[i].brust_t, ct, tat, wt);
 	}
 	free(table);
-	printf("Average Turnaround Time = %f\n", avtat / size );
-	printf("Avarage Waiting Time = %f\n", avwt / size);
+	fprintf(fp, "Average Turnaround Time = %f\n", avtat / size );
+	fprintf(fp, "Avarage Waiting Time = %f\n", avwt / size);
+	fclose(fp);
 }
