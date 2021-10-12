@@ -1,0 +1,3 @@
+physical addresses are located in RAM  
+virtual addresses are in process 
+  
