@@ -1,0 +1,4 @@
+number of entires = number of addresses / number of bytes per page  
+number of addresses = 2^16
+number of bytes per page = (2^3*2^10) 
+2^16/(2^3*2^10) = 2^3 
