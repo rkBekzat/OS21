@@ -1,0 +1,5 @@
+Chmod 660 (chmod a+rwx,u-x,g-x,o-rwx) sets permissions so that, User can read, can write and can't execute. Group can read, can write and can't execute. Others can't read, can't write and can't execute.
+
+Chmod 775 (chmod a+rwx,o-w) sets permissions so that, User can read, can write and can execute. Group can read, can write and can execute. Others can read, can't write and can execute.
+
+Chmod 777 (chmod a+rwx) sets permissions so that, User can read, can write and can execute. Group can read, can write and can execute. Others can read, can write and can execute.
