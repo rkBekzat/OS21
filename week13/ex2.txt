@@ -1,0 +1,18 @@
+Recovery
+This strategy might be efficient to use if the deadlock was already detected, so that it can be used when all other strategies failed. There are a three main ways how we can recover from the deadlock: through preemption, rollback and killing process 
+
+
+Prevention
+Prevention is an efficient strategy when dealing with a deadlock might be too unefficient or dangerous for our system. It might be the case that we cannot fully avoid the deadlock, becuse we can not provide the algorithm with a information about the future requests. In such a case we might want to use the prevention. There are 4 main ways how we can prevent the deadlock. 
+Attacking the :
+	Mutual-Exclusion Condition
+	Hold-and-Wait Condition
+	No-Preemption Condition
+	Circular Wait Condition
+
+
+Avoidance
+There are certain algorithms which allow us to avoid the deadlock; however, they need some data about the future requests. If we are able to provide such an information than the avoidance is the best strategy. There are 3 considerable algorithms for avoiding the deadlock:
+	Resource Trajectories
+	Safe and Unsafe States
+	The Baker's Algorithm
